@@ -1,0 +1,195 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Combining Transform Functions</title>
+
+<style type="text/css">
+
+	body {
+		font: 1em Arial;
+		background-image : url("background LED.jpg");
+		background-size : cover;
+		padding-top: 50px;
+	}
+
+		body > div {
+			width:1000px;
+			margin: 50px auto 0;
+		}
+
+
+  #ones {
+    background-image : url("LED1.jpg");
+      background-size: cover;
+  }
+  #twos{
+      background-image : url("LED2.jpg");
+      background-size: cover;
+  }
+  #threes{
+      background-image : url("LED3.jpg");
+      background-size: cover;
+  }
+  #fours{
+      background-image : url("LED4.jpg");
+      background-size: cover;
+  }
+  #fives{
+      background-image : url("LED5.jpg");
+      background-size: cover;
+  }
+  #sixs{
+      background-image : url("LED6.jpg");
+      background-size: cover;
+  }
+  #sevens{
+      background-image : url("LED7.jpg");
+      background-size: cover;
+  }
+  #eights{
+      background-image : url("LED8.jpg");
+      background-size: cover;
+  }
+			article {
+				width: 1000px;
+				margin-top: 20px;
+				float: left;
+			}
+
+				article div {
+					width: 120px;
+					height: 80px;
+					background: #ccc;
+					float: left;
+					margin: 0 5px 5px 0;
+					text-align: center;
+					padding-top: 30px;
+				}
+				.center {
+					position: relative;
+				
+					width:1000px;
+					height: 20px;
+					text-align: center;
+				}
+
+				label {
+					color: gray;
+					cursor: pointer;
+					border-radius: 50%;
+					padding: 10px;
+					background: black;
+					width: 15px;
+					height: 15px;
+					float: left;
+					text-align: center;
+					display:inline-block;
+					margin-right: 5px;
+				}
+
+				label:hover {
+					background: black;
+					color: yellow;
+
+				}
+				 label:first-child { margin-left:35%;}
+
+				input {
+					position: absolute;
+					left: -9999px;
+				}
+
+				input:checked + label {
+					font-weight: bold;
+				}
+
+				input:checked ~ ol li {
+					opacity:0.3;
+					-webkit-transform: scale(0.7);
+				}
+
+				input:checked ~ article div {
+					-webkit-transform-origin: 0 0;
+				}
+
+				input[value="1"]:checked ~ article div:first-child {
+					-webkit-transform: translate(255px, 150px) scale(4);
+				}
+
+				input[value="2"]:checked ~ article div:nth-child(2) {
+					-webkit-transform: translate(130px, 150px) scale(4);
+				}
+
+				input[value="3"]:checked ~ article div:nth-child(3) {
+					-webkit-transform: translate(5px, 150px) scale(4);
+				}
+
+				input[value="4"]:checked ~ article div:nth-child(4) {
+					-webkit-transform: translate(-120px, 150px) scale(4);
+				}
+
+				input[value="5"]:checked ~ article div:nth-child(5) {
+					-webkit-transform: translate(-245px, 150px) scale(4);
+				}
+
+				input[value="6"]:checked ~ article div:nth-child(6) {
+					-webkit-transform: translate(-370px, 150px) scale(4);
+				}
+	
+  input[value="7"]:checked ~ article div:nth-child(7) {
+					-webkit-transform: translate(-495px, 150px) scale(4);
+				}
+	
+  input[value="8"]:checked ~ article div:last-child {
+					-webkit-transform: translate(-620px, 150px) scale(4);
+				}
+	
+</style>
+
+</head>
+
+<body>
+
+	<div>
+	
+		<input id="one" name="transforms" type="radio" value="1">
+		<input id="two" name="transforms" type="radio" value="2">
+        <input id="three" name="transforms" type="radio" value="3">
+        <input id="four" name="transforms" type="radio" value="4">
+        <input id="five" name="transforms" type="radio" value="5">
+        <input id="six" name="transforms" type="radio" value="6">
+      <input id="seven" name="transforms" type="radio" value="7">
+      <input id="eight" name="transforms" type="radio" value="8">
+      <div class="center">
+        <label for="one">1</label>
+
+        <label for="two">2</label>
+
+        <label for="three">3</label>
+
+        <label for="four">4</label>
+
+        <label for="five">5</label>
+
+        <label for="six">6</label>
+ 
+        <label for="seven">7</label>
+      
+        <label for="eight">8</label>
+     </div>
+		<article>
+		    <div id="ones"></div>
+		    <div id="twos"></div>
+		    <div id="threes"></div>
+		    <div id="fours"></div>
+		    <div id="fives"></div>
+		    <div id="sixs"></div>
+          <div id="sevens"></div>
+          <div id="eights"></div>
+		</article>
+
+	</div>
+
+</body>
+</html>
